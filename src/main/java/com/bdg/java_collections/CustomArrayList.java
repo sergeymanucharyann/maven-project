@@ -1,6 +1,7 @@
 package com.bdg.java_collections;
 
 import java.util.*;
+
 public class CustomArrayList<E> extends AbstractList<E> implements List<E> {
 
     private int size = 0;
@@ -29,15 +30,16 @@ public class CustomArrayList<E> extends AbstractList<E> implements List<E> {
     public boolean contains(Object o) {
         return indexOf(o) >= 0;
     }
+
     @Override
-    public Iterator<E> iterator(){
+    public Iterator<E> iterator() {
         return null;
     }
 
     @Override
     public boolean add(E e) {
         Node<E> currentTail = tail;
-        Node<E> newNode = new Node<>(e, currentTail, null);
+        Node<E> newNode = new Node<>();
         tail = newNode;
         if (currentTail == null) {
             head = newNode;
